@@ -1,6 +1,6 @@
 # Mathematical Background for an Undergraduate Course in Probability and Statistics
 
-This is a brief overview of many mathematical skills typically required in undergraduate statistics courses.
+A short ebook providing a brief overview of many mathematical skills typically required in undergraduate statistics courses.
 
 ## Download Instructions
 
