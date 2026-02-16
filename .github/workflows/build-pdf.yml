@@ -26,11 +26,11 @@ jobs:
       - name: Compile PDF
         run: |
           cd src
-          pdflatex -output-directory=.. Mathematical_Prelims_Ethan_Pawl.tex
-          pdflatex -output-directory=.. Mathematical_Prelims_Ethan_Pawl.tex
+          pdflatex -output-directory=.. Math_BG_Ethan_Pawl.tex
+          pdflatex -output-directory=.. Math_BG_Ethan_Pawl.tex
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Mathematical_Prelims_Ethan_Pawl
-          path: Mathematical_Prelims_Ethan_Pawl.pdf
+          name: Math_BG_Ethan_Pawl
+          path: Math_BG_Ethan_Pawl.pdf
