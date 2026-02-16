@@ -1,12 +1,10 @@
 # Mathematical Background for an Undergraduate Course in Probability and Statistics
 
-This quick-reference guide is not intended to provide many useful example problems or to provide a full treatment of all the covered topics. Instead, I seek to provide an brief overview of  many mathematical skills typically required in undergraduate statistics courses. If you need to review any of the topics further, please consult your professor, TA, or other written resources.
+This is a brief overview of many mathematical skills typically required in undergraduate statistics courses.
 
-Some very basic ideas are covered in this text; please do not take this as an assumption about the reader's level of knowledge or ability. I only wanted to start from the very basics to ensure a sense of completeness in the ideas discussed herein. 
+## Download Instructions
 
-Further, while I have proofread this text several times, there may still be minor mistakes or unclear phrasing. If you think I could make any minor adjustments to make the text more readable, please open a new Issue.
-
-I hope this is helpful.
+To download the combiled PDF please click Releases -> Latest Release -> `Math_BG_Ethan_Pawl.pdf`.
 
 ## License
 
