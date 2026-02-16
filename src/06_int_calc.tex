@@ -1,0 +1,243 @@
+\section{Results From Integral Calculus}
+
+There are two types of integrals: \textit{indefinite integrals} (which do not have bounds) and 
+\textit{definite integrals} (which have bounds).
+
+Some useful indefinite integrals:
+\begin{equation*}
+    \begin{aligned}
+        & \int 0\ dx = C & \qquad & \int \ dx = x + C & \qquad & \int x^n\ dx = \frac{x^{n+1}}{n + 1} + C,\text{ for } n \neq -1 \\ 
+        & \int e^x\ dx = e^x + C & \qquad &\int \frac{1}{x}\ dx = \log |x| + C & \qquad & \int \log x = x \log x - x + C
+    \end{aligned}
+\end{equation*}
+The function (on the right-hand side) we get after taking the indefinite integral is called the \mbox{\textit{antiderivative}}. 
+
+\subsection{The Fundamental Theorem of Calculus}
+
+This theorem is very important (hence its name). The value of a 
+definite integral is
+\begin{equation*}
+    \int_a^b f(x)\ dx = F(x)\Big|_a^b = F(b) - F(a)
+\end{equation*}
+where $F$ is the antiderivative of $f$. That is, we first find the antiderivative of $f$, evaluate 
+it at $x = b$, evaluate it at $x = a$ and the subtract the latter from the former. For example:
+\begin{equation*}
+    \int_2^4 x^2\ dx = \frac{x^3}{3}\Big|_2^4 = \frac{4^3}{3} - \frac{2^3}{3} 
+    = \frac{4^3 - 2^3}{3} = \frac{64 - 8}{3} = \frac{56}{3}
+\end{equation*}
+
+\subsection{Integral Properties}
+
+\begin{equation*}
+    \begin{aligned}
+        & \int f(x) + g(x)\ dx = \int f(x)\ dx + \int g(x)\ dx  \\ 
+        & \int c \cdot f(x)\ dx = c \int f(x)\ dx \\
+        & \int_a^a f(x)\ dx = 0 \\ 
+        & \int_b^a f(x)\ dx = - \int_a^b f(x)\ dx
+    \end{aligned}
+\end{equation*}
+
+\subsection{Integration Techniques}
+
+\subsubsection{$u$-substitution}
+
+When faced with an integral which does not appear in the above table, such as
+\begin{equation*}
+    \int x e^{x^2}\ dx
+\end{equation*}
+we can reduce the complexity by making a substitution. We find a function of $x$ in the \textit{integrand} (the function we're integrating) 
+whose derivative also appears in the integrand. This cancels out complicated terms and allows us to simplify it into an integral we know. 
+In the above integral, we let $u = x^2$. Notice that $\frac{du}{dx} = 2x$, which is proportional to the factor of $x$ in the integrand. 
+Rearranging the integrand, we have 
+\begin{equation*}
+    \int x e^{x^2}\ dx = \int e^{x^2} x\ dx
+\end{equation*}
+Making the $u$-substitution, we have
+\begin{equation*}
+    \int e^{x^2} x\ dx = \int e^u x\ dx
+\end{equation*}
+But now we have two variables in the integrand; we need to replace all $x$'s with functions of $u$. We do this by substituting $dx$ in terms of $x$ and $du$:
+\begin{equation*}
+    \begin{aligned}
+        \frac{du}{dx} & = 2x \\ 
+        du &= 2x dx \\ 
+        dx &= \frac{du}{2x} 
+    \end{aligned}
+\end{equation*}
+Substituting this value of $dx$ into the integral gives
+\begin{equation*}
+    \begin{aligned}
+        \int e^u x\ dx & = \int e^u x\ \frac{du}{2x} \\ 
+        & = \int \frac{1}{2} e^u\ du 
+    \end{aligned}
+\end{equation*}
+and this integral is easy to solve using the list of integrals at the beginning of this section:
+\begin{equation*}
+    \begin{aligned}
+         \int \frac{1}{2} e^u\ du  & = \frac{1}{2} \int e^u\ du \\ 
+         & = \frac{1}{2} e^u + C
+    \end{aligned}
+\end{equation*}
+Finally, we substitute $u = x^2$:
+\begin{equation*}
+    \frac{1}{2} e^u + C = \frac{1}{2} e^{x^2} + C
+\end{equation*}
+For a definite integral, there is no need to substitute $u$ in terms of $x$ at the end; instead, just evaluate the bounds in the $u$ space. 
+For example, when solving the definite integral
+\begin{equation*}
+    \int_1^3 x e^{x^2}\ dx
+\end{equation*}
+we note that the bounds are values of $x$. I will make this clear by writing
+\begin{equation*}
+    \int_{x = 1}^{x = 3} x e^{x^2}\ dx
+\end{equation*}
+We substitute $u = x^2$ and get 
+\begin{equation*}
+    \int_{x = 1}^{x = 3} \frac{1}{2} e^u\ du
+\end{equation*}
+Here, the bounds are in terms of $x$, but we are integrating with respect to $u$. To resolve this, we find the value of $u$ at each of the $x$ bounds:
+\begin{equation*}
+    \begin{aligned}
+        x = 1 \text{ and } u = 2 x & \Rightarrow u = 2(1) = 2 \\ 
+        x = 3 \text{ and } u = 2 x & \Rightarrow u = 2(3) = 6 \\ 
+    \end{aligned}
+\end{equation*}
+so the integral becomes
+\begin{equation*}
+    \int_{u = 2}^{u = 6} \frac{1}{2} e^u\ du = \int_2^6 \frac{1}{2} e^u\ du
+\end{equation*}
+We then proceed with the fundamental theorem:
+\begin{equation*}
+    \begin{aligned}
+        \int_2^6 \frac{1}{2} e^u\ du & = \frac{1}{2} \Big[e^u\Big|_2^6 \\ 
+        & \boxed{= \frac{1}{2} (e^6 - e^2)}
+    \end{aligned}
+\end{equation*}
+
+\subsubsection{Integration by Parts}
+
+\begin{equation} \label{eqn:intParts}
+    \int u\ dv = u v - \int v\ du
+\end{equation}
+where $du = u'(x)\ dx$ and $v(x) = \int dv$. The idea is that we should factor a complex integrand into 
+a product of two functions: one which is easy to differentiate, and one which is easy to 
+integrate. After we apply Equation (\ref{eqn:intParts}), the integral is easy. For example, to find
+\begin{equation*}
+    \int x e^x\ dx
+\end{equation*}
+we let $u(x) = x$ and $dv = e^x\ dx$. Then $du = u'(x)\ dx = 1\ dx = dx$ and $
+v = \int e^x\ dx = e^x$ (we can ignore the $+C$ as long as we add one at the very end). So 
+\begin{equation*}
+    \begin{aligned}
+        \int x e^x\ dx = \int u\ dv = u v - \int v\ du = x e^x - \int e^x\ dx & = xe^x - e^x + C  \\ 
+        & = \boxed{e^x (x - 1) + C}
+    \end{aligned}
+\end{equation*}
+For a definite integral
+\begin{equation*}
+        \int_a^b x e^x\ dx 
+\end{equation*}
+we omit the $+C$ and instead apply the fundamental theorem to both terms immediately after applying integration by parts:
+\begin{equation*}
+    \begin{aligned}
+        \int_a^b x e^x\ dx & = \Big[x e^x - \int e^x\ dx \Big|_a^b \\ 
+        & = \Big[x e^x - e^x\Big|_a^b \\ 
+        & = \Big[e^x(x-1)\Big|_a^b
+    \end{aligned}
+\end{equation*}
+A mnemonic device to remember $u v - \int v\ du$ is ``when you're outside getting $uv$ rays, 
+you're not inside playing $v\ du$ games.'' This means, ``when you're outside (of the integral sign) 
+getting $uv$ rays, you're not ($-$) inside (the integral sign) playing $v\ du$ games.'' 
+(The credit for this saying goes to my high school calculus teacher, left anonymous for privacy.)
+
+\subsection{Integrals of Functions of More Than One Variable}
+
+When integrating a function of more than one variable, we integrate with respect to a single 
+variable at a time, holding the others constant and apply the fundamental theorem to the variable 
+with respect to which we're integrating (if the integral is definite). For example, 
+\begin{equation*}
+    \begin{aligned}
+        \int_0^1 2x y\ dx & = \int_0^1 \boxed{2x}\ y\ dx \\ 
+        & = \Big[x^2 y \Big|_{x = 0}^{x = 1}  \\ 
+        & = 1^2 y - 0^2 y \\ 
+        & = y
+    \end{aligned}
+\end{equation*}
+For another example, consider the same function integrated with respect to $y$:
+\begin{equation*}
+    \begin{aligned}
+        \int_2^4 2xy\ dx & = \Big[2x \frac{y^2}{2} \Big|_{y = 2}^{y = 4}  \\ 
+         & = \Big[x y^2 \Big|_{y = 2}^{y = 4}  \\ 
+        & = 4^2 x -  2^2 x \\ 
+        & = 16 x - 4 x \\ 
+        & = 12x
+    \end{aligned}
+\end{equation*}
+
+\begin{samepage}
+\subsubsection{Iterated Integrals}
+
+    We can also integrate with respect to multiple variables, one after the other. Consider the 
+    double integral
+    \begin{equation*}
+    \int_0^2 \int_1^3 x^2 y^3 + y\ dx\ dy
+    \end{equation*}
+    We solve this by first considering $y$ as a fixed constant, and using the Fundamental Theorem of 
+    Calculus to integrate with respect to $x$:
+    \begin{equation*}
+        \begin{aligned}
+            \int_0^2 \int_1^3 x^2 y^3 + y\ dx\ dy & = \int_0^2 \Big[ \frac{x^3}{3} y^3 + xy \Big|_{x = 1}^3  \ dy \\ 
+            & = \int_0^2 \frac{3^3}{3} y^3 + 3y - \left(\frac{1^3}{3} y^3 + 1y\right)\ dy \\ 
+            & = \int_0^2 \frac{3^3 - 1^3}{3} y^3 + 3y - y\ dy \\ 
+            & = \int_0^2 \frac{27 - 1}{3} y^3 + 2y\ dy \\ 
+            & = \int_0^2 \frac{26}{3} y^3 + 2y\ dy \\ 
+        \end{aligned}
+    \end{equation*}
+    and then integrate with respect to $y$ using the fundamental theorem:
+    \begin{equation*}
+        \begin{aligned}
+            \int_0^2 \frac{26}{3} y^3 + 2y\ dy & = \Big[\frac{26}{3} \cdot \frac{y^4}{4} + y^2 \Big|_0^2 \\ 
+            & = \frac{26}{3}\cdot  \frac{2^4}{4} + 2^2 - \left(\frac{26}{3} \cdot \frac{0^4}{4} + 0^2\right) \\ 
+            & = \frac{13}{3} \cdot \frac{16}{2} + 4 - 0 \\ 
+            & = \frac{13}{3} \cdot 8 + 4 \\ 
+            & = \boxed{\frac{104}{3} + 4}
+        \end{aligned}
+    \end{equation*}
+\end{samepage}
+
+We can also integrate with respect to $y$ first and then $x$:
+\begin{equation*}
+    \int_0^2 \int_1^3 x^2 y^3 + y\ dx\ dy = \int_1^3 \int_0^2  x^2 y^3 + y\ dy\ dx
+\end{equation*}
+This is called \textbf{Fubini's Theorem}. Sometimes, however, the bounds of one variable will 
+depend on another variable:
+\begin{equation*}
+    \int_0^2 \int_0^y x^2 y^3 + y\ dx\ dy
+\end{equation*}
+Here, we can still change the order of integration, but we will have to adjust the bounds. The 
+bounds of the above integral correspond to the system of inequalities
+\begin{equation*}
+    \begin{cases}
+        \begin{aligned}
+            0 \leq y \leq 2 \\
+            0 \leq x \leq y 
+        \end{aligned}
+    \end{cases}
+\end{equation*}
+If we want to integrate with respect to $y$ first, we need to solve this inequality such that $x$ 
+is bounded between two constants and $y$ is bounded between a constant and $x$. 
+The best way to solve inequalities like this one is by drawing a graph. 
+I will not discuss this in further detail here because it can get quite complicated, 
+but the solution in this case is
+\begin{equation*}
+    \begin{cases}
+        \begin{aligned}
+            0 \leq x \leq 2 \\
+            x \leq y \leq 2 
+        \end{aligned}
+    \end{cases}
+\end{equation*}
+so 
+\begin{equation*}
+    \int_0^2 \int_0^y x^2 y^3 + y\ dx\ dy = \int_0^2 \int_x^2 x^2 y^3 + y\ dy\ dx
+\end{equation*}

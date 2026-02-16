@@ -1,0 +1,36 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended
+
+      - name: Compile PDF
+        run: |
+          cd src
+          pdflatex -output-directory=.. Mathematical_Prelims_Ethan_Pawl.tex
+          pdflatex -output-directory=.. Mathematical_Prelims_Ethan_Pawl.tex
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mathematical_Prelims_Ethan_Pawl
+          path: Mathematical_Prelims_Ethan_Pawl.pdf

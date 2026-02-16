@@ -1,0 +1,131 @@
+\section{Exponents and Logarithms}
+
+\subsection{Exponents}
+
+\begin{equation*}
+    a^n
+\end{equation*}
+is a number $a$ multiplied by itself $n$ times. For example, $2^3 = 2 \cdot 2 \cdot 2 = 8$. We call $a$ the \textit{base} and $n$ the \textit{exponent} or, more briefly, 
+the \textit{power}. We pronounce $a^n$ as ``$a$ to the power of $n$'' or ``$a$ to the $n$th power.''
+
+\subsection{Exponent Properties}
+
+\begin{equation*}
+    a^1 = a 
+\end{equation*}
+\begin{equation*}
+    a^0 = 1
+\end{equation*}
+\begin{equation*}
+    0^0 \text{ is \textit{indeterminate}} 
+\end{equation*}
+
+\subsection{Roots as Exponents}
+
+\begin{equation*}
+    a^{1/n} = \sqrt[n]{a}
+\end{equation*}
+
+\subsection{Multiplying Numbers Raised to a Power}
+
+\begin{equation*}
+    a^n \cdot b^n =(ab)^n
+\end{equation*}
+
+\subsection{Raising a Number Raised to a Power to a Power}
+
+\begin{equation} \label{eqn:powerToPower}
+    (a^n)^m = a^{nm}
+\end{equation}
+Be careful with this: the parentheses are necessary. The order of operations here is ``multiply $a$ by itself $n$ times, then multiply the resulting number by itself $m$ 
+times.'' In contrast, the order of operations without parentheses
+\begin{equation*}
+    a^{n^m}
+\end{equation*}
+means ``multiply $n$ by itself $m$ times. Whatever that number is, multiply $a$ by itself that many times.'' In general,
+\begin{equation*}
+    a^{n^m} \neq (a^n)^m  = a^{nm}
+\end{equation*}
+
+\subsubsection{Fractional Exponents as Roots and Powers}
+Equation \eqref{eqn:powerToPower} implies that 
+\begin{equation*}
+    a^{\frac{n}{m}} = \sqrt[m]{a^n} = \left(\sqrt[m]{a}\right)^n
+\end{equation*}
+
+\subsection{Adding Numbers Raised to a Power}
+
+You can only add numbers raised to a power if both the base and the exponent are identical. For example,
+\begin{equation*}
+    a^x + a^x = 2 a^x
+\end{equation*}
+You cannot simplify
+\begin{equation*}
+    a^x + a^y
+\end{equation*}
+or 
+\begin{equation*}
+    a^x + b^x
+\end{equation*}
+
+\subsection{Logarithms}
+
+A logarithm is the inverse operation to an exponent. That is, just like subtracting ``undoes'' adding, logarithms ``undo'' exponents. When we write 
+\begin{equation*}
+    \log_b a 
+\end{equation*}
+we're asking, ``$b$ to what power equals $a$?'' For example, 
+\begin{equation*}
+    2^3 = 8, \text{ so } \log_2 8 = 3
+\end{equation*}
+
+\subsection{Properties of Logarithms}
+
+\begin{equation*}
+    \log_b 0 \text{ is undefined}
+\end{equation*}
+\begin{equation*}
+    \log_b 1 = 0
+\end{equation*}
+\begin{equation*}
+    \log_b b = 1
+\end{equation*}
+\begin{equation*}
+    \log_b b^x = x
+\end{equation*}
+\begin{equation*}
+    b^{\log_b x} = x
+\end{equation*}
+
+\subsection{Logarithm of a Product}
+
+\begin{equation} \label{eqn:logProd}
+    \log_b (xy) = \log_b x + \log_b y 
+\end{equation}
+
+\subsection{Logarithm of a Quotient}
+
+Equation \eqref{eqn:logProd} implies
+\begin{equation*}
+    \log_b \left(\frac{x}{y}\right) = \log_b x - \log_b y
+\end{equation*}
+
+\subsection{Logarithm of a Number Raised to a Power}
+
+\begin{equation*}
+    \log_b (x^y) = y \log_b x
+\end{equation*}
+
+\subsection{Special Bases of a Logarithm}
+
+\begin{equation*}
+    \log_e x = \ln x
+\end{equation*}
+When the base of a logarithm is Euler's number $e \approx 2.71$, we call it the \textit{natural logarithm}.
+
+\subsection{Statisticians' notation for the natural logarithm}
+
+Usually, when mathematicians usually write $\log x$, they use this as shorthand for $\log_{10} x$. 
+Unfortunately, when statisticians write $\log x$, they really mean $\ln x$. In a statistics class, it 
+is safe to assume $\log x$ means $\ln x = \log_e x$, because $\log_{10} x$ is really not that useful in statistics. 
+When in doubt, ask the professor. \textbf{For the rest of this text, we will refer to $\ln x$ as $\log x$}.

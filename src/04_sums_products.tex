@@ -1,0 +1,196 @@
+\section{Summation and Product Notation}
+
+The notation 
+\begin{equation*}
+    \sum_{i = 0}^7 3 i^2
+\end{equation*}
+is a shorthand for 
+\begin{equation*}
+    3 (0)^2 + 3(1)^2 + 3(2)^2 + \ldots + 3(7)^2
+\end{equation*}
+We substitute each integer value of $i$, from 0 to 7, into the expression  $3 i^2$ and add all the terms together. In a similar way, 
+\begin{equation*}
+    \prod_{i = 0}^7 3 i^2
+\end{equation*}
+is a shorthand for multiplication:
+\begin{equation*}
+    \prod_{i = 0}^7 3 i^2 = 3(0)^2 \cdot 3(1)^2 \cdot 3(2)^2 \cdot \ldots \cdot 3(7)^2
+\end{equation*}
+
+\subsection{Properties of Sums}
+
+Let $j$ and $k$ be integers, $c$ be any real number, and $f$ be a any function (such as $i^2$). Then
+\begin{equation*}
+    \sum_{i = j}^k c \cdot f(i) = c \cdot \sum_{i = j}^k f(i)
+\end{equation*}
+For example,
+\begin{equation*}
+    \sum_{i = 1}^4 3 i^2 = 3 \cdot \sum_{i = 1}^4 i^2
+\end{equation*}
+Additionally, if $g$ is another function,
+\begin{equation*}
+    \sum_{i = j}^k [f(i) + g(i)] = \left[\sum_{i = j}^k f(i)\right] + \left[\sum_{i = j}^k g(i)\right]
+\end{equation*}
+
+We can also truncate a sum by separating terms at the end:
+\begin{equation*}
+    \sum_{i = 0}^7 f(i) = \left(\sum_{i = 0}^6 f(i)\right) + f(7)
+\end{equation*}
+or at the beginning:
+\begin{equation*}
+    \sum_{i = 0}^7 f(i) = f(0) + \left(\sum_{i = 1}^7 f(i)\right) 
+\end{equation*}
+or even in the middle:
+\begin{equation*}
+    \sum_{i = 0}^7 f(i) = \left(\sum_{i = 0}^3 f(i)\right) + \left(\sum_{i = 4}^7 f(i)\right) 
+\end{equation*}
+
+\subsection{Closed-form Expressions for Particular Sums}
+
+Let $c$ and $p$ be real numbers.
+
+\begin{equation*}
+    \begin{aligned}
+        \sum_{i = 1}^n c & = c \cdot n  \\ 
+        \sum_{i = 1}^n i & = \frac{n(n+1)}{2}  \\ 
+        \sum_{i = 1}^n i^2 & = \frac{n(n+1)(2n+1)}{6} \\
+        \sum_{i = 0}^n p^i & = \frac{1 - p^{n+1}}{1 - p} \\
+        \sum_{i = 1}^n p^i & = \frac{1 - p^n}{1 - p} \\
+        e^x & = \sum_{n = 0}^\infty \frac{x^n}{n!} \qquad \text{(Taylor series expansion)}
+    \end{aligned}
+\end{equation*}
+If $-1 < p < 1$, then
+\begin{equation*}
+    \begin{aligned}
+        \sum_{i = 0}^\infty p^i & = \frac{1}{1 - p} & (\text{geometric series}) \\
+        \sum_{i = 1}^\infty i p^{i - 1} & = \frac{1}{(1 - p)^2} & 
+    \end{aligned}
+\end{equation*}
+
+\subsection{Properties of Products}
+
+\begin{equation*}
+    \begin{aligned}
+        \prod_{i = 1}^n c & = c^n  \\ 
+        \prod_{i = 1}^n f(i) g(i) & = \left[\prod_{i = 1}^n f(i)\right] \left[\prod_{i = 1}^n g(i)\right] 
+    \end{aligned}
+\end{equation*}
+
+\subsection{Factorials and the Gamma Function}
+
+The product of the first $n$ integers
+\begin{equation*}
+    \prod_{i = 1}^n i = 1 \cdot 2 \cdot 3 \cdot \ldots \cdot (n-2) \cdot (n-1) \cdot n
+\end{equation*}
+is denoted $n!$ and is pronounced ``$n$ \textit{factorial}.'' By convention, $0! = 1$.
+
+What if we want to take factorials of non-integers? The generalization of the factorial to any nonnegative real number 
+is called the \textit{gamma function}, which is defined as
+\begin{equation*}
+    \Gamma(\alpha) = \int_0^\infty x^{\alpha - 1} e^{-x}\ dx
+\end{equation*}
+
+\subsubsection{Properties of the Gamma Function}
+
+For $\alpha > 1$,
+\begin{equation*}
+    \begin{aligned}
+        \Gamma(\alpha) = (\alpha - 1) \Gamma(\alpha - 1)
+    \end{aligned}
+\end{equation*}
+Therefore, for any positive integer $n$,
+\begin{equation*}
+    \begin{aligned}
+        \Gamma(n) = (n - 1)!
+    \end{aligned}
+\end{equation*}
+
+\subsection{The Beta Function}
+
+The \textit{beta function}, for any $\alpha, \beta > 0$, is 
+\begin{equation*}
+    B(\alpha, \beta) = \int_0^1 x^{\alpha - 1} (1-x)^{\beta - 1}\ dx
+\end{equation*}
+and it has the property
+\begin{equation*}
+    B(\alpha, \beta) = \frac{\Gamma(\alpha) \cdot \Gamma{(\beta)}}{\Gamma(\alpha + \beta)}
+\end{equation*}
+
+\subsection{Binomial Coefficients}
+
+Result from combinatorics: the number of ways to select a group of $k$ items from a pool of $n$ ($\geq k$) distinct items, without taking order into account, is 
+\begin{equation*}
+    \frac{n!}{k! (n - k)!} = \binom{n}{k}
+\end{equation*}
+We use $\binom{n}{k}$ as a shorthand for this quantity and pronounce it as ``$n$ \textit{choose} $k$''. These numbers are called \textit{binomial coefficients} because of their 
+appearance in the \textit{binomial expansion theorem} (see Section \ref{sec:binExp}).
+
+\subsubsection{Properties of Binomial Coefficients}
+
+\begin{equation*}
+    \begin{aligned}
+        \binom{n}{k} & = \binom{n}{n - k} \\
+        \binom{n}{0} &= \binom{n}{n}  = 1 
+    \end{aligned}
+\end{equation*}
+
+\subsubsection{Pascal's Triangle}
+
+One way to find the values of the binomial coefficients is by writing out Pascal's triangle. Start with a frame of 1's:
+\begin{equation*}
+    \begin{matrix}
+         & & &1& & &\\ 
+         & &1& &1& & \\ 
+         &1& & & &1& \\
+        1& & & & & &1
+    \end{matrix}
+\end{equation*}
+The topmost row is the 0th row and the number 1 here represents $\binom{0}{0} = 1$. The 1st row displays $\binom{1}{0} = 1$ and $\binom{1}{1} = 1$. 
+There should be 3 numbers in the second row: $\binom{2}{0} = 1$, $\binom{2}{1} = ?$ and $\binom{2}{2} = 1$. To fill in $\binom{2}{1}$, we add the numbers 
+immediately up and to the sides:$\binom{2}{0} + \binom{2}{2} = 1 + 1 = 2$. We write this number in the second row:
+\begin{equation*}
+    \begin{matrix}
+         & & &1& & &\\ 
+         & &1& &1& & \\ 
+         &1& &2& &1& \\
+        1& & & & & &1
+    \end{matrix}
+\end{equation*}
+We fill in the third row similarly:
+\begin{equation*}
+    \begin{matrix}
+         & & &1& & &\\ 
+         & &1& &1& & \\ 
+         &1& &2& &1& \\
+        1& &3& &3& &1
+    \end{matrix}
+\end{equation*}
+Continuing this way, we can get larger versions of Pascal's triangle such at the one below:
+\begin{equation*}
+\begin{array}{c}
+1\\
+1\quad 1\\
+1\quad 2\quad 1\\
+1\quad 3\quad 3\quad 1\\
+1\quad 4\quad 6\quad 4\quad 1\\
+1\quad 5\quad 10\quad 10\quad 5\quad 1\\
+1\quad 6\quad 15\quad 20\quad 15\quad 6\quad 1
+\end{array}
+\end{equation*}
+To find $\binom{5}{3}$ go to the 5th row from the top (remember counting starts from 0):
+\begin{equation*}
+    1\quad 5\quad 10\quad 10\quad 5\quad 1
+\end{equation*}
+and select the 3rd entry from the left (counting here also starts at 0):
+\begin{equation*}
+    1\quad 5\quad 10\quad \boxed{10}\quad 5\quad 1
+\end{equation*}
+so $\binom{5}{3} = 10$. \textbf{Exercise}: Find $\binom{7}{6}$.
+
+\subsection{Binomial Expansion Theorem} \label{sec:binExp}
+
+Let $x$ and $y$ be real numbers and $n$ be a nonnegative integer. Then 
+\begin{equation*}
+    (x + y)^n = \sum_{k = 0}^n \binom{n}{k} x^n y^{n - k}
+\end{equation*}
+The quantity $x + y$ is called a \textit{binomial} because it is the sum of 2 (bi) terms. The numbers $\binom{n}{k}$ are the coefficients of the expanded binomial.

@@ -1,0 +1,134 @@
+\section{Jacobian Matrices and Determinants}
+
+Consider the system of equations 
+\begin{equation*}
+    \begin{cases}
+        \begin{aligned}
+            u &= f_1(x, y) \\ 
+            v &= f_2(x, y)
+        \end{aligned}
+    \end{cases}
+\end{equation*}
+and imagine we want to integrate 
+\begin{equation*}
+    \iint h(x, y)\ dx\ dy
+\end{equation*}
+Sometimes, this integral is much easier to evaluate by first solving for $x$ and $y$ in terms of 
+$u$ and $v$ and then integrating with respect to $u$ and $v$. To do this, we first need to solve 
+for $x$ and $y$ in terms of $u$ and $v$ to get the system 
+\begin{equation*}
+    \begin{cases}
+        \begin{aligned}
+            x &= g_1(u, v) \\ 
+            y &= g_2(u, v)
+        \end{aligned}
+    \end{cases}
+\end{equation*}
+and then find the Jacobian matrix of partial derivatives, which is
+{
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\arraycolsep}{6pt}
+
+    \begin{equation*}
+        J = 
+        \begin{pmatrix}
+            \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ 
+            \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+        \end{pmatrix}
+    \end{equation*}
+}
+Once we do that, we can evaluate the integral using the change of variables formula:
+\begin{equation} \label{eqn:CoV}
+    \iint h(g_1(u, v), g_2(u, v))\ \text{abs det}(J)\ du\ dv
+\end{equation}
+where $\text{abs det}(J)$ means ``the absolute value of the determinant of matrix $J$.'' (I 
+will discuss how to calculate determinants later.) 
+
+I will not instruct readers on the solution of this integral (please refer to a calculus textbook), 
+but I mention this formula here for two reasons. First, the change of variables is useful in 
+probability and makes the necessity of the Jacobian matrix clear. 
+Second, a remark about notation. Often, authors write $|J|$ instead of $\text{abs det}(J)$, 
+but since $|\cdot|$ is often used to 
+denote either the determinant \textit{or} the absolute value, students may think that 
+$|J|$ is simply the determinant of the matrix $J$ and forget to take the absolute value. 
+I urge students 
+to instead write $\text{abs det}$.
+
+\textbf{Example}: Consider the transformation
+ \begin{equation*}
+    \begin{aligned}
+        u &= x + y \\ 
+        v &= x - y
+    \end{aligned}
+\end{equation*}
+We can solve these equations by elimination. Adding the two equations gives
+ \begin{equation*}
+    \begin{aligned}
+        u + v &= 2x + y - y = 2x \\ 
+        x & = \frac{u + v}{2} = \frac{u}{2} + \frac{v}{2}
+    \end{aligned}
+\end{equation*}
+Subtracting the second equation from the first gives
+ \begin{equation*}
+    \begin{aligned}
+        u - v &= x -  + 2y = 2y \\ 
+        y & = \frac{u - v}{2} = \frac{u}{2} - \frac{v}{2}
+    \end{aligned}
+\end{equation*}
+so the inverse transformation is 
+ \begin{equation*}
+    \begin{cases}
+        \begin{aligned}
+            x & = \frac{u}{2} + \frac{v}{2} \\ 
+            y & = \frac{u}{2} - \frac{v}{2}
+        \end{aligned}
+    \end{cases}
+\end{equation*}
+Therefore, the Jacobian matrix is 
+{
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\arraycolsep}{6pt}
+    \begin{equation*}
+        J = 
+        \begin{pmatrix}
+            \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ 
+            \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            \frac{1}{2} & \frac{1}{2} \\ 
+            \frac{1}{2} & - \frac{1}{2}
+        \end{pmatrix}
+    \end{equation*}
+}
+    
+\subsection{Matrix Determinant}
+
+The determinant of a 2x2 matrix
+\begin{equation*}
+    A = 
+    \begin{pmatrix}
+        a & b \\ 
+        c & d
+    \end{pmatrix}
+\end{equation*}
+is denoted by $\text{det}(A)$ or $|A|$ and is equal to 
+\begin{equation} \label{eqn:det}
+        \text{det}(A) = ad - bc
+\end{equation}
+For formulas regarding determinants of larger matrices, please refer to a linear algebra 
+textbook.
+
+Back to the example: applying Equation (\ref{eqn:det}), the determinant of the Jacobian matrix 
+is 
+\begin{equation*}
+    \begin{aligned}
+        \text{det}(J) & = \frac{1}{2} (-\frac{1}{2}) - \frac{1}{2} \cdot \frac{1}{2} \\ 
+        & = -\frac{1}{4} - \frac{1}{4} \\ 
+        & = -\frac{2}{4} \\ 
+        & = -\frac{1}{2}
+    \end{aligned}
+\end{equation*}
+Thus, 
+\begin{equation*}
+    \text{abs det}(J) = \left|- \frac{1}{2}\right| = \frac{1}{2}
+\end{equation*}

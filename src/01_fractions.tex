@@ -1,0 +1,141 @@
+\section{Arithmetic with Fractions}
+
+\subsection{Vocabulary and Basics}
+
+\begin{equation} \label{eqn:divBy1}
+    \frac{a}{1} = a
+\end{equation}
+\begin{equation} \label{eqn:divByItself}
+    \frac{a}{a} = 1
+\end{equation}
+Given a fraction $\frac{a}{b}$, its \textit{reciprocal} is $\frac{b}{a}$ (flip the fraction upside-down). 
+By Equation \eqref{eqn:divBy1}, the reciprocal of a whole number $a$ is $\frac{1}{a}$.
+
+Given a fraction $\frac{a}{b}$, $a$ is called the \textit{numerator} and $b$ is called the \textit{denominator}. In this 
+book, I refer to the numerator as the \textit{top} and the denominator as the \textit{bottom} to avoid repeating big words too many times. The entire quantity
+$\frac{a}{b}$ or $a \div b$ is called a \textit{quotient}, which refers to a number divided by another number.
+
+When adding two numbers like so 
+\begin{equation*}
+    a + b
+\end{equation*}
+we refer to $a$ and $b$ as \textit{terms}. $a$ is the first term and $b$ is the second term. When adding three numbers, the third number is the third term, and so on.
+
+When multiplying two numbers like so 
+\begin{equation*}
+    a \cdot b
+\end{equation*}
+we refer to $a$ and $b$ as \textit{factors}. We refer to the entire quantity $a \cdot b$ as a \textit{product}. We can also shorten
+\begin{equation*}
+    a \cdot b = ab
+\end{equation*}
+for brevity. Don't do this with actual numbers, because writing $5 \cdot 4 = 54$ makes it look like you think ``five times four is fifty-four,'' which is incorrect. 
+Instead, you may write $5 \cdot 4 = 5(4)$.
+
+\subsection{Multiplying Fractions}
+
+Multiply the numerators and the denominators:
+\begin{equation*}
+    \frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d} = \frac{ac}{bd}
+\end{equation*}
+
+\subsection{Dividing Fractions}
+
+Dividing by a fraction is the same as multiplying by the reciprocal:
+\begin{equation} \label{eqn:divFrac}
+    \frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{ad}{bc}
+\end{equation}
+
+Fraction division can also be written in a more confusing manner, with nested fractions. Equation \eqref{eqn:divFrac} can also be written as 
+\begin{equation*}
+    \frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b} \cdot \frac{d}{c}
+\end{equation*}
+
+\subsection{Adding Fractions} \label{sec:addFrac}
+
+Get a common denominator (multiply the top and bottom of the first fraction by the denominator of the second, and vice versa), 
+then add the numerators. The denominator stays the same:
+\begin{equation} \label{eqn:addFrac}
+    \frac{a}{b} + \frac{c}{d} = \frac{ad}{bd} + \frac{bc}{bd} = \frac{ad + bc}{bd}
+\end{equation}
+
+\subsection{Subtracting Fractions}
+
+This is almost exactly the same as adding:
+\begin{equation} \label{eqn:subFrac}
+    \frac{a}{b} - \frac{c}{d} = \frac{ad}{bd} - \frac{bc}{bd} = \frac{ad - bc}{bd}
+\end{equation}
+
+\subsubsection{Aside: Plus or Minus Notation}
+
+We can combine Equations \eqref{eqn:addFrac} and \eqref{eqn:subFrac} into one using the ``plus or minus'' symbol $\pm$:
+\begin{equation*}
+    \frac{a}{b} \pm \frac{c}{d} = \frac{ad}{bd} \pm \frac{bc}{bd} = \frac{ad \pm bc}{bd}
+\end{equation*}
+
+\subsection{Reducing Fractions}
+
+If the same factor appears in the numerator and denominator, they reduce:
+\begin{equation} \label{eqn:fracRed}
+    \frac{ab}{ac} = \frac{b}{c}
+\end{equation}
+since due to Equation \eqref{eqn:divByItself}.
+
+A notable exception is 
+\begin{equation*}
+    \frac{0}{0} \neq 1
+\end{equation*}
+We call $\frac{0}{0}$ \textit{indeterminate}. Furthermore, we call 
+\begin{equation*}
+    \frac{a}{0}
+\end{equation*}
+\textit{undefined}.
+
+\subsection{Finding the Least Common Denominator} 
+
+In Equation \eqref{eqn:addFrac} we find the common denominator by multiplying the denominators of the two terms. 
+However, the resulting denominator might be large. For example:
+\begin{equation*}
+    \frac{1}{6} + \frac{1}{9} = \frac{1 \cdot 9}{6 \cdot 9} + \frac{6 \cdot 1}{6 \cdot 9} = \frac{9}{54} + \frac{6}{54} = \frac{15}{54}
+\end{equation*}
+In this case, we can factor the numerator and denominator as 
+\begin{equation*}
+    \frac{15}{54} = \frac{3 \cdot 5}{3 \cdot 18}
+\end{equation*}
+and we can apply Equation \eqref{eqn:fracRed} to get
+\begin{equation*}
+    \frac{3 \cdot 5}{3 \cdot 18} = \frac{5}{18}
+\end{equation*}
+We can skip this extra work of getting big numbers in the numerator and denominator, then reducing common factors, by finding a smaller common denominator. 
+We can do this by listing the multiples of the two denominators and looking for the smallest common multiple. This number is called the \textit{least common denominator}. 
+For example, the multiples of 6 are 
+\begin{equation*}
+    6, 12, 18, 24, 30, \ldots
+\end{equation*}
+and the multiples of 9 are 
+\begin{equation*}
+    9, 18, 27, 36, 45, \ldots
+\end{equation*}
+We see that the smallest number in both lists is 18. Therefore, 18 is the least common denominator. We can also call 18 the \textit{least common multiple} of 6 and 9. 
+
+\subsubsection{Addition and Subtraction using the Least Common Denominator}
+
+Now that we've found the least common denominator, how do we add and subtract fractions? We get a common denominator by multiplying the top and bottom of each fraction 
+by a factor that gives us the least common denominator. For example, 
+\begin{equation*}
+    6 \cdot 3 = 18
+\end{equation*}
+and 
+\begin{equation*}
+    9 \cdot 2 = 18
+\end{equation*}
+so we perform addition like so:
+\begin{equation*}
+    \frac{1}{6} + \frac{1}{9} = \frac{1 \cdot 3}{6 \cdot 3} + \frac{2 \cdot 1}{2 \cdot 9} = \frac{3}{18} + \frac{2}{18} = \frac{3 + 2}{18} + \frac{5}{18}
+\end{equation*}
+Once we're used to quickly identifying the least common denominator, adding fractions this way is much faster than using the method in Section \ref{sec:addFrac}.
+
+To subtract fractions, we use the same method, but replace the plus with a minus:
+\begin{equation*}
+    \frac{1}{6} - \frac{1}{9} = \frac{1 \cdot 3}{6 \cdot 3} - \frac{2 \cdot 1}{2 \cdot 9} = \frac{3}{18} - \frac{2}{18} = \frac{3 - 2}{18} = \frac{1}{18}
+\end{equation*}

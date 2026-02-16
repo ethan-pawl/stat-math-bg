@@ -1,0 +1,94 @@
+\section{Results from Differential Calculus}
+
+Rather than discuss the theory of derivatives, I will instead list some derivatives which 
+show up frequently in statistics. 
+Recall that $\frac{d}{dx}$ means ``the derivative of''. 
+Let $x$ be a variable, $c$ be a constant real number, and $n$ be a nonzero integer. Then 
+\begin{equation*}
+    \begin{aligned}
+        &\frac{d}{dx} (c) = 0 & \qquad &\frac{d}{dx} (x) = 1 & \qquad &\frac{d}{dx} \left(x^n\right) = nx^{n-1} \\ 
+        &\frac{d}{dx} \left(e^x\right) = e^x & &\frac{d}{dx} \left(\log x\right) = \frac{1}{x} &  &
+    \end{aligned}
+\end{equation*}
+
+\subsection{Differentiation Rules for More Complicated Functions}
+
+\textbf{Differentiation is linear}. Let $f$ and $g$ be two functions. Then 
+\begin{equation*}
+    \begin{aligned}
+        &\frac{d}{dx} [c \cdot f(x)] = c \cdot \frac{d}{dx} [f(x)] \\ 
+        &\frac{d}{dx} [f(x) \pm g(x)] = \frac{d}{dx} [f(x)] \pm \frac{d}{dx} [g(x)]
+    \end{aligned}
+\end{equation*}
+
+\textbf{Product \& Quotient Rules}: 
+To simplify notation, note that $f'(x)$ is a shorthand for $\frac{d}{dx} [f(x)]$.
+\begin{equation*}
+    \begin{aligned}
+        &\frac{d}{dx} [f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x) \\ 
+        &\frac{d}{dx} \left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}
+    \end{aligned}
+\end{equation*}
+It is easier to remember this if you remove the $x$:
+\begin{equation*}
+    \begin{aligned}
+        &\frac{d}{dx} [f \cdot g] = f'  g + f  g' \\ 
+        &\frac{d}{dx} \left[\frac{f}{g}\right] = \frac{f'  g - f  g'}{g^2}
+    \end{aligned}
+\end{equation*}
+
+\textbf{Chain Rule}: Sometimes, functions inside functions appear. An example of this is 
+\begin{equation*}
+    e^{x^2}
+\end{equation*}
+We can denote this function by $f(g(x))$, where $f(u) = e^u$ and $g(x) = x^2$. To differentiate 
+a function like this, use the chain rule:
+\begin{equation*}
+    \frac{d}{dx} [f(g(x))] = f'(g(x)) \cdot g'(x)
+\end{equation*}
+For instance, to differentiate $e^{x^2}$, $f'(u) = \frac{d}{du} e^u = e^u$ and 
+$g'(x) = \frac{d}{dx} \left[x^2\right] = 2x$. Therefore, 
+\begin{equation*}
+    \frac{d}{dx} \left[e^{x^2}\right] = \frac{d}{dx} [f(g(x))] = f'(g(x)) \cdot g'(x) = e^{x^2} \cdot 2x
+\end{equation*}
+
+\subsection{Differentiating a Function of More Than One Variable}
+
+We differentiate functions of more than one variable, such as 
+\begin{equation*}
+    f(x, y) = xy
+\end{equation*}
+with respect to a single variable at a time. We take the 
+\textit{partial derivative with respect to} $x$ or the partial derivative with respect to $y$, 
+but not both at the same time. When we take the partial derivative with respect to $x$, denoted 
+as 
+\begin{equation*}
+    \frac{\partial}{\partial x} [f(x, y)]
+\end{equation*}
+we treat $y$ as a constant. For example,
+\begin{equation*}
+    \frac{\partial}{\partial x} [xy] = y \cdot  \frac{\partial}{\partial x} [x] = y \cdot 1 = y
+\end{equation*}
+For another example,
+\begin{equation*}
+    \frac{\partial}{\partial y} [x + y] = \frac{\partial}{\partial y} [x] + 
+    \frac{\partial}{\partial y} [y] = 0 + 1 = 1
+\end{equation*}
+
+\subsection{Optimization}
+
+\textbf{First derivative test}: A continuous and differentiable function $f$ achieves a local maximum or local minimum when $f'(x) = 0$. Therefore, we can find which $x$ value 
+gives a local optimum (max or min) by setting $f'(x) = 0$ and solving for $x$. 
+\textbf{Second derivative test}: $f$ achieves a local maximum when $f''(x) < 0$ and a local minimum when $f''(x) > 0$. For example, to find a local optimum of $f(x) = x^2 - 2x$, we set 
+\begin{equation*}
+    \begin{aligned}
+        f'(x) = 2x - 2 & = 0 \\
+        2x & = 2 \\ 
+        x &= 1
+    \end{aligned}
+\end{equation*}
+so $f$ achieves a local optimum at $x = 1$. The value of this local optimum is $f(1) = 1^2 - 2(1) = 1 - 2 = -1$. To check if this is a local max or min, we evaluate 
+\begin{equation*}
+    f''(x) = 2 \Big|_{x = 1} = 2
+\end{equation*}
+so by the second derivative test this is a local minimum. This means that, when $x$ is close to, but not equal to, $1$, $f(x)$ is always bigger than $-1$ (the local minimum).

@@ -1,0 +1,70 @@
+\section{Algebra}
+
+\subsection{Solving Equations}
+
+In order to solve an equation for an unknown variable, we isolate that variable by ``undoing'' all the operations which have been done to that variable. We want the variable on one side of the equation and numbers on the other side. For example, 
+to solve
+\begin{equation*}
+    \log\left(\frac{3x^2}{4} + 1\right) = 12
+\end{equation*}
+we want to ``unwrap'' $x$ from the outside in. The order of operations on the left-hand side of the equation is: ``first, $x$ is squared, then multiplied by 3, then divided by 4, then added to 1, and then we take the logarithm of it.'' To isolate $x$, we apply the inverse operations in 
+the opposite order. The logarithm is applied last, so we first apply the inverse operation: putting $e$ to the power of both sides:
+\begin{equation*}
+    \begin{aligned}
+        e^{\log\left(\frac{3x^2}{4} + 1\right)} & = e^{12} \\
+       \frac{3x^2}{4} + 1 & = e^{12} 
+    \end{aligned}
+\end{equation*}
+The second-to-last operation is to add 1; the inverse operation is to subtract 1:
+\begin{equation*}
+    \begin{aligned}
+       \frac{3x^2}{4} + 1 - 1 & = e^{12} - 1 \\ 
+       \frac{3x^2}{4} & = e^{12} - 1 
+    \end{aligned}
+\end{equation*}
+Continuing this way, the next few steps are 
+\begin{equation*}
+    \begin{aligned}
+       \frac{3x^2}{4} \cdot 4 & = (e^{12} - 1) \cdot 4 &  (\text{Inverse of dividing by 4 is multiplying by 4}) \\  
+        3x^2 & = 4 (e^{12} - 1) \\ 
+        \frac{3x^2}{3} & = \frac{4 (e^{12} - 1)}{3}  &  (\text{Inverse of multiplying by 3 is dividing by 3}) \\
+        x^2 & = \frac{4}{3} (e^{12} - 1) \\ 
+        \sqrt{x^2} & = \sqrt{\frac{4}{3} (e^{12} - 1)} &  (\text{Inverse of squaring is square root}) \\ 
+        x & = \sqrt{\frac{4}{3} (e^{12} - 1)}
+    \end{aligned}
+\end{equation*}
+
+\subsection{Solving Inequalities}
+
+The same rules apply for solving inequalities, but you must switch the direction of the inequality sign whenever you multiply or divide both sides by a negative number. That is, $\ge$ becomes $\le$ and vice versa. Similarly, $\geq$ 
+becomes $\leq$ and vice versa. If you are multiplying or dividing by a variable which could be either positive or negative, you must split the inequality into three cases; in Case 1, assume the variable is positive (don't flip the direction 
+of the inequality symbol when you multiply/divide by the variable). In Case 2, assume the variable is negative (flip the direction of the inequality symbol when you multiply/divide by the variable). In Case 3, assume the variable is exactly 0 
+and check if the inequality holds true. (If this is confusing, don't worry about it too much; this doesn't come up that often.)
+
+In most cases, we can find ways around dividing by a variable. We should do this, because dividing by a variable which could be 0 can cause problems. For an easy example, if trying to solve
+\begin{equation*}
+    2 x = 3x
+\end{equation*}
+you can divide by $x$ to get 
+\begin{equation*}
+    \begin{aligned}
+        \frac{2 x}{x} & = \frac{3x}{x} \\ 
+        2 & = 3
+    \end{aligned}
+\end{equation*}
+which is obviously not true. The correct solution is
+\begin{equation*}
+    \begin{aligned}
+        2x  & = 3x \\ 
+        2x - 2x & = 3x - 2x \\ 
+        0 & = x
+    \end{aligned}
+\end{equation*}
+so $x = 0$. This is the correct answer, because we can substitute it into the original equation and see that it is true:
+\begin{equation*}
+    \begin{aligned}
+        2x  & = 3x \\ 
+        2(0)  & = 3(0) \\ 
+        0 & = 0
+    \end{aligned}
+\end{equation*}
