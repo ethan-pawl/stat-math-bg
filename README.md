@@ -1,4 +1,4 @@
-# Mathematical Background for an Undergraduate Course in Probability and Statistics
+# Mathematical Foundations for Undergraduate Statistics
 
 A short ebook overviewing mathematical skills typically required for undergraduate statistics courses.
 
